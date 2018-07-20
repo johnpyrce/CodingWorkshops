@@ -46,13 +46,12 @@ def test_add_a_person_with_lower_than_median(organizer):
 
 
 # Pytest Fixture: https://docs.pytest.org/en/latest/fixture.html
-@pytest.mark.skip(reason="broken test needs fixing")
 @pytest.mark.parametrize("test_input,expected", [
     ([Person('a', '@a', 1),
      Person('b', '@b', 2),
      Person('c', '@c', 3),
-     Person('d', '@d', 4)], 1),
-    ([Person('a', '@a', 1)], 1)
+     Person('d', '@d', 4)], 2),
+    ([Person('a', '@a', 1)], 2)
 ])
 def test_count_number_of_teams(organizer, test_input, expected):
     for p in test_input:
